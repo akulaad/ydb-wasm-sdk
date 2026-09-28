@@ -36,6 +36,10 @@ The runtime is uploaded as library `sdk`, then the module with its manifest.
 Use a separately installed compatible YDB CLI. This repository does not build
 the server or the CLI. The example query is `SELECT Hello::hello(42l);`.
 
+Agent instructions for uploading modules, resolving runtime dependencies, and
+waiting for compilation are in
+[`.agent/skills/ydb-udf-cli/SKILL.md`](.agent/skills/ydb-udf-cli/SKILL.md).
+
 To build all supported targets and check their WASM headers:
 
 ```sh
@@ -78,7 +82,7 @@ and executable mode. The exporter refuses manual edits and unowned collisions;
 only files in the previous manifest may be deleted during synchronization.
 
 Edit shared code upstream, then re-export. SDK-specific code lives in
-`tools/sdk`, `examples/hello`, `export`, and `.github`. Changes to exported
+`tools/sdk`, `examples/hello`, `export`, `.agent/skills`, and `.github`. Changes to exported
 `ya.make` recursion are deterministic exporter transformations.
 
 See [the export design](docs/export.md) for details and remaining work.
