@@ -14,6 +14,7 @@ jobs:
       - name: Test exporter and verify exported sources
         run: |
           python3 -m unittest discover -s tools/sdk -p 'test_*.py' -v
+          python3 -m unittest discover -s .agent/skills/ydb-udf-cli/tests -v
           python3 tools/sdk/export.py --verify
       - name: Build from SDK alone with an empty cache
         env:

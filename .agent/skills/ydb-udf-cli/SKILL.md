@@ -81,7 +81,44 @@ The manifest supplies the name and type. Do not use the obsolete upload flags
 
 ## Upload the requested UDF
 
-For the bundled Hello example:
+Prefer the bundled [upload-and-wait helper](scripts/upload_and_wait.py) for the
+upload and polling sequence. It requires only Python 3.8+ and a compatible YDB
+CLI; no `jq`, local checkout paths, or default cluster address are embedded.
+It uploads one artifact only: resolve dependencies as described above first.
+
+```bash
+python3 .agent/skills/ydb-udf-cli/scripts/upload_and_wait.py \
+    --profile "$YDB_PROFILE" \
+    --file examples/hello/libexamples-hello.so \
+    --manifest examples/hello/manifest.json
+```
+
+Use an existing profile, or pass both `--endpoint` and `--database` (also accepted
+as `YDB_ENDPOINT` and `YDB_DATABASE`). Set `YDB_BIN` or `--ydb-bin` to a CLI
+executable path or name on `PATH`. Extra global options can be supplied with
+repeated `--cli-arg=VALUE`; prefer profile/environment authentication to putting
+secrets in arguments. Prefix detection is automatic; `--prefix udf` or
+`--prefix experimental` selects it explicitly.
+
+The default is `create-only`. An update requires `--replace-only --expected-uid
+UID`; explicit `--write-mode create-or-replace` is available when intended.
+For libraries, use the same helper with their binary and manifest. Resume
+waiting without uploading again with:
+
+```bash
+python3 .agent/skills/ydb-udf-cli/scripts/upload_and_wait.py \
+    --profile "$YDB_PROFILE" --wait-only --name "$uploaded_name" --uid "$uploaded_uid"
+```
+
+`--timeout` bounds the entire invocation (default 180 seconds), including CLI
+calls; `--command-timeout` caps each call (default 60 seconds). `--poll` defaults
+to two seconds. Repeat `--cpu-spec` to select required platforms. Progress goes
+to stderr; stdout contains only the final successful `describe` JSON. A timed-out
+upload may have succeeded server-side: inspect state before retrying. The helper
+does not upload dependencies, execute SQL, or modify cluster settings.
+
+For a manual upload of the bundled Hello example, followed by polling as
+described below:
 
 ```bash
 "${udf_cmd[@]}" upload \
