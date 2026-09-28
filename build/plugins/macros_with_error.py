@@ -1,0 +1,98 @@
+import sys
+
+import _common
+
+import ymake
+
+
+@ymake.macro
+def MACROS_WITH_ERROR(unit: ymake.Unit, *args: str):
+    sys.stderr.write('This macros will fail\n')
+    raise Exception('Expected fail in MACROS_WITH_ERROR')
+
+
+@ymake.macro
+def RESTRICT_PATH(unit: ymake.Unit, *args: str):
+    if args:
+        if 'MSG' in args:
+            pos = args.index('MSG')
+            paths, msg = args[:pos], args[pos + 1 :]
+            msg = ' '.join(msg)
+        else:
+            paths, msg = args, 'forbidden'
+        if not _common.strip_roots(unit.path()).startswith(paths):
+            error_msg = "Path '[[imp]]{}[[rst]]' is restricted - [[bad]]{}[[rst]]. Valid path prefixes are: [[unimp]]{}[[rst]]".format(
+                unit.path(), msg, ', '.join(paths)
+            )
+            ymake.report_configure_error(error_msg)
+
+
+@ymake.macro
+def ASSERT(unit: ymake.Unit, *args: str):
+    val = unit.get(args[0])
+    if val and val.lower() == "no":
+        msg = ' '.join(args[1:])
+        ymake.report_configure_error(msg)
+
+
+@ymake.macro
+def VALIDATE_IN_DIRS(unit: ymake.Unit, *args: str):
+    files_var = args[0]
+    pattern = args[1]
+    no_srcdir = args[2] == '--'
+    srcdir = '' if no_srcdir else args[2]
+    dirs = args[3:] if no_srcdir else args[4:]
+    pfx = '[[imp]]DECLARE_IN_DIRS[[rst]]: '
+
+    if '**' in pattern:
+        ymake.report_configure_error(f"{pfx}'**' in files mask is prohibited. Seen [[unimp]]{pattern}[[rst]]")
+        unit.set([files_var, ""])
+
+    for pat in ('*', '?'):
+        if pat in srcdir:
+            ymake.report_configure_error(
+                f"{pfx}'{pat}' in [[imp]]SRCDIR[[rst]] argument is prohibited. Seen [[unimp]]{srcdir}[[rst]]"
+            )
+            unit.set([files_var, ""])
+
+    for dir in dirs:
+        for pat in ('*', '?', '$', '..'):
+            if pat in dir:
+                ymake.report_configure_error(
+                    f"{pfx}'{pat}' in [[imp]]DIRS[[rst]] argument is prohibited. Seen [[unimp]]{dir}[[rst]]"
+                )
+                unit.set([files_var, ""])
+
+
+@ymake.macro
+def _ASSERT_NO_YAMAKE(unit: ymake.Unit, *args: str):
+    """
+    @usage: _ASSERT_NO_YAMAKE(<files> [MSG <message>])
+
+    Check that no ya.make files are found in <files> list.
+    Macro is primarily targeted to recursive globs validation and so made internal as `_GLOB` macro is.
+
+    - Optional MSG allows overriding the reason
+    - Macro is incompatible with `_LATE_GLOB`
+
+    @example:
+    ```
+    macro NO_MODULES_INSIDE() {
+        _GLOB(YAMAKES **/ya.make EXCLUDE ya.make)
+        _ASSERT_NO_YAMAKE($YAMAKES MSG no modules expected inside the current one)
+    }
+    ```
+    """
+
+    if args:
+        if 'MSG' in args:
+            pos = args.index('MSG')
+            files, msg = args[:pos], args[pos + 1 :]
+            msg = ' '.join(msg)
+        else:
+            files, msg = args, 'prohibited from recursive glob match'
+
+        found = next((f for f in files if f.endswith('ya.make')), None)
+        if found:
+            error_msg = "unexpected ya.make: '[[imp]]{}[[rst]]' - {}".format(found, msg)
+            ymake.report_configure_error(error_msg)

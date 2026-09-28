@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "upstream_url": "https://github.com/akulaad/ydb.git",
+  "target_platform": "clang20-emscripten-wasm64",
+  "build_type": "release",
+  "targets": [
+    "ydb/udfs/wasm/sdk",
+    "ydb/udfs/wasm/text",
+    "ydb/udfs/wasm/md5",
+    "ydb/udfs/wasm/types",
+    "ydb/services/udf_store/wasm/object_framework"
+  ],
+  "extra_files": ["ya", "ya.conf", ".arcadia.root", "LICENSE", "AUTHORS"],
+  "extra_trees": [
+    "build",
+    "ydb/udfs/wasm/common",
+    "ydb/services/udf_store/wasm/abi",
+    "ydb/services/udf_store/wasm/object_framework"
+  ]
+}

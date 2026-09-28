@@ -1,0 +1,63 @@
+name: Import YDB revision
+on:
+  workflow_dispatch:
+    inputs:
+      revision:
+        description: Full commit SHA in the configured upstream repository
+        required: true
+        type: string
+permissions:
+  contents: write
+concurrency:
+  group: sdk-source-sync
+  cancel-in-progress: false
+jobs:
+  export:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate revision
+        env:
+          REVISION: ${{ inputs.revision }}
+        run: python3 -c 'import os,re; assert re.fullmatch("[0-9a-f]{40}", os.environ["REVISION"]), "Expected full commit SHA"'
+      - name: Fetch upstream and export
+        env:
+          REVISION: ${{ inputs.revision }}
+        run: |
+          upstream="$RUNNER_TEMP/ydb-upstream"
+          upstream_url=$(python3 -c 'import json; print(json.load(open("export/spec.json"))["upstream_url"])')
+          git init "$upstream"
+          git -C "$upstream" remote add origin "$upstream_url"
+          git -C "$upstream" fetch --depth=1 origin "$REVISION"
+          git -C "$upstream" checkout --detach FETCH_HEAD
+          python3 tools/sdk/export.py --source "$upstream" --revision "$REVISION"
+          python3 tools/sdk/export.py --verify
+          python3 -m unittest discover -s tools/sdk -p 'test_*.py' -v
+          # The build below must not be able to use this temporary checkout.
+          mv "$upstream" "$RUNNER_TEMP/ydb-export-complete"
+      - name: Build exported tree in a container without upstream or caches
+        run: |
+          docker run --rm -v "$PWD:/sdk" -w /sdk ubuntu:22.04 sh -ec '
+            apt-get update && apt-get install -y python3 ca-certificates git
+            python3 tools/sdk/smoke.py
+          '
+      - name: Publish sync branch for manual pull request
+        env:
+          REVISION: ${{ inputs.revision }}
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          python3 tools/sdk/stage_export.py
+          if git diff --cached --quiet; then exit 0; fi
+          branch="sync/ydb-$REVISION"
+          git checkout -b "$branch"
+          git commit -m "Import YDB $REVISION"
+          git push origin "$branch"
+          python3 - <<'PY'
+          import os
+          from pathlib import Path
+          url = f'https://github.com/{os.environ["GITHUB_REPOSITORY"]}/compare/main...sync/ydb-{os.environ["REVISION"]}?expand=1'
+          with Path(os.environ['GITHUB_STEP_SUMMARY']).open('a') as summary:
+              summary.write(f'Export checks and clean build passed. [Open the sync pull request]({url}).\n')
+          PY

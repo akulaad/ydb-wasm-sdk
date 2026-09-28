@@ -1,0 +1,25 @@
+{
+  "build_type": "release",
+  "export_manifest_sha256": "2da59e159d4fcc0c1ca84aa19c806ba0db8da89dc8accbefdd548578d2d7f588",
+  "file_count": 4531,
+  "host_platform": "linux-x86_64",
+  "host_targets": [
+    "contrib/tools/ragel6"
+  ],
+  "runtime_library_name": "sdk",
+  "runtime_target": "ydb/udfs/wasm/sdk",
+  "schema_version": 1,
+  "source_bytes": 28105235,
+  "spec_sha256": "fdea1dba76ba5104b014da1f8b9b3403e01d54533a225b24c16ab0bbe9479e77",
+  "target_platform": "clang20-emscripten-wasm64",
+  "targets": [
+    "ydb/udfs/wasm/sdk",
+    "ydb/udfs/wasm/text",
+    "ydb/udfs/wasm/md5",
+    "ydb/udfs/wasm/types",
+    "ydb/services/udf_store/wasm/object_framework"
+  ],
+  "upstream_revision": "a5b480988243eb66a8a8f5a3af3954a8ffc4b383",
+  "upstream_url": "https://github.com/akulaad/ydb.git",
+  "ya_bootstrap_sha256": "636df52f1b244bbdc8247472300970f64ef1c1950f37990635f9a898e9522b43"
+}

@@ -1,0 +1,10 @@
+{
+  "module_type": "module",
+  "module_kind": "wasm",
+  "module_name": "Hello",
+  "module_extension": "wasm",
+  "required_libraries": ["sdk"],
+  "functions": [
+    {"name": "hello", "argument_types": ["Int64"], "result_type": "Int64"}
+  ]
+}

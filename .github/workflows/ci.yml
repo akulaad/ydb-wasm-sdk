@@ -1,0 +1,23 @@
+name: SDK checks
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - name: Test exporter and verify exported sources
+        run: |
+          python3 -m unittest discover -s tools/sdk -p 'test_*.py' -v
+          python3 tools/sdk/export.py --verify
+      - name: Build from SDK alone with an empty cache
+        env:
+          HOME: ${{ runner.temp }}/sdk-home
+        run: |
+          mkdir -p "$HOME"
+          python3 tools/sdk/smoke.py

@@ -1,0 +1,151 @@
+import sys
+import subprocess
+import optparse
+import os
+import re
+
+# Explicitly enable local imports
+# Don't forget to add imported scripts to inputs of the calling command!
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+import build_java_with_error_prone2 as java_error_prone
+import setup_java_tmpdir as java_tmpdir
+import javac_daemon_client as jdc
+
+
+def parse_args():
+    parser = optparse.OptionParser()
+    parser.disable_interspersed_args()
+    parser.add_option('--sources-list')
+    parser.add_option('--error-prone')
+    parser.add_option('--verbose', default=False, action='store_true')
+    parser.add_option('--remove-notes', default=False, action='store_true')
+    parser.add_option('--ignore-errors', default=False, action='store_true')
+    parser.add_option('--kotlin', default=False, action='store_true')
+    parser.add_option('--with-setup-java-tmpdir', default=False, action='store_true')
+    return parser.parse_args()
+
+
+COLORING = {
+    r'^(?P<path>.*):(?P<line>\d*): error: (?P<msg>.*)': lambda m: '[[unimp]]{path}[[rst]]:[[alt2]]{line}[[rst]]: [[c:light-red]]error[[rst]]: [[bad]]{msg}[[rst]]'.format(
+        path=m.group('path'),
+        line=m.group('line'),
+        msg=m.group('msg'),
+    ),
+    r'^(?P<path>.*):(?P<line>\d*): warning: (?P<msg>.*)': lambda m: '[[unimp]]{path}[[rst]]:[[alt2]]{line}[[rst]]: [[c:light-yellow]]warning[[rst]]: {msg}'.format(
+        path=m.group('path'),
+        line=m.group('line'),
+        msg=m.group('msg'),
+    ),
+    r'^warning: ': lambda m: '[[c:light-yellow]]warning[[rst]]: ',
+    r'^error: (?P<msg>.*)': lambda m: '[[c:light-red]]error[[rst]]: [[bad]]{msg}[[rst]]'.format(msg=m.group('msg')),
+    r'^Note: ': lambda m: '[[c:light-cyan]]Note[[rst]]: ',
+}
+
+
+def colorize(err):
+    for regex, sub in COLORING.iteritems():
+        err = re.sub(regex, sub, err, flags=re.MULTILINE)
+    return err
+
+
+def remove_notes(err):
+    return '\n'.join([line for line in err.split('\n') if not line.startswith('Note:')])
+
+
+def main():
+    opts, cmd = parse_args()
+
+    if opts.with_setup_java_tmpdir:
+        cmd = java_tmpdir.fix_tmpdir(cmd)
+
+    if opts.error_prone:
+        cmd = java_error_prone.add_error_prone_to_cmd(opts.error_prone, cmd)
+
+    with open(opts.sources_list) as f:
+        input_files = f.read().strip().split()
+
+    if opts.kotlin:
+        input_files = [i for i in input_files if i.endswith('.kt')]
+        # When ijar is active, compilation classpaths contain X-interface.jar instead of X.jar.
+        # Rewrite -Xfriend-paths=X.jar -> -Xfriend-paths=X-interface.jar when the interface
+        # jar exists, so that Kotlin grants 'internal' access from the correct classpath entry.
+
+        def _remap_friend_paths(arg):
+            prefix = '-Xfriend-paths='
+            if not arg.startswith(prefix):
+                return arg
+            parts = re.split(r'([:,])', arg[len(prefix) :])
+            remapped = []
+            for p in parts:
+                if p.endswith('.jar') and not p.endswith('-interface.jar'):
+                    ijar_path = p[: -len('.jar')] + '-interface.jar'
+                    if os.path.exists(ijar_path):
+                        p = ijar_path
+                remapped.append(p)
+            return prefix + ''.join(remapped)
+
+        cmd = [_remap_friend_paths(a) for a in cmd]
+
+    if not input_files:
+        if opts.verbose:
+            sys.stderr.write('No files to compile, javac is not launched.\n')
+
+    else:
+        # cmd[0] is either the javac binary (plain javac) or the java binary (kotlin).
+        if jdc.is_enabled() and not opts.error_prone:
+            if opts.kotlin:
+                # cmd = [java_bin, (<jvm args>...,) '-jar', kotlin_compiler.jar, kotlinc_args...]
+                # Derive javac_bin from java_bin (same JDK).
+                java_bin = cmd[0]
+                javac_bin = os.path.join(os.path.dirname(java_bin), 'javac')
+                # Find '-jar' sentinel to split JVM args from kotlinc args.
+                jar_idx = cmd.index('-jar')
+                kotlin_compiler = cmd[jar_idx + 1]
+                # Keep the launcher/compiler split from the command line:
+                #   pre-'-jar'  -> JVM launcher flags (-D props, --add-opens,
+                #                  --enable-native-access, -Xss, ...)
+                #   post-'-jar' -> kotlinc compiler args (pure compiler options;
+                #                  bare --enable-native-access etc. here are NOT
+                #                  launcher flags and pass straight through).
+                # The client classifies only the launcher flags: semantic ones
+                # select/launch the right side-daemon, resource flags force a
+                # subprocess fallback so they are never silently dropped.
+                jvm_launcher_flags = cmd[1:jar_idx]
+                kotlinc_args = cmd[jar_idx + 2 :]
+                rc, err_bytes = jdc.compile_kotlin(
+                    javac_bin, kotlin_compiler, kotlinc_args, jvm_launcher_flags=jvm_launcher_flags
+                )
+            else:
+                # Pass "-J..." launcher flags through to the daemon client.
+                # The client classifies them (java.conf sends e.g. -J--add-opens
+                # for error-prone, -J-Xss128m for lombok): semantic flags route to
+                # a side-daemon launched with them; resource flags (-Xss/-Xmx/-XX:)
+                # force a subprocess fallback so they are never silently dropped.
+                # (Previously all -J flags were stripped here, which silently lost
+                # required settings — Issue B.)
+                rc, err_bytes = jdc.compile_raw(cmd[0], cmd[1:])
+            err = err_bytes.decode('utf-8', errors='replace')
+        else:
+            p = subprocess.Popen(cmd, stderr=subprocess.PIPE)
+            _, err_bytes = p.communicate()
+            rc = p.wait()
+            err = err_bytes.decode()
+
+        if opts.remove_notes:
+            err = remove_notes(err)
+
+        try:
+            err = colorize(err)
+
+        except Exception:
+            pass
+
+        if opts.ignore_errors and rc:
+            sys.stderr.write('error: javac actually failed with exit code {}\n'.format(rc))
+            rc = 0
+        sys.stderr.write(err)
+        sys.exit(rc)
+
+
+if __name__ == '__main__':
+    main()
