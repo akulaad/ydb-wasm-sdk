@@ -5,18 +5,24 @@ description: Upload WASM UDF modules and their runtime libraries from this SDK u
 
 # Upload SDK modules with the YDB CLI
 
-Use a separately installed `ydb` CLI with the `udf` command group. This SDK does
-not contain the CLI or server sources. Run examples from the SDK repository root.
+Use a separately installed YDB CLI. Depending on its version, UDF commands may
+be exposed as `ydb udf` or `ydb experimental udf`; an experimental CLI build may
+be required. This SDK does not contain the CLI or server sources. Run examples
+from the SDK repository root.
 
 ## Establish the target
 
 - Use the endpoint, database, CLI path, and authentication already supplied by
   the user or their selected CLI profile. Ask only for missing connection details;
   do not assume a localhost endpoint or database.
-- Check `ydb udf upload --help` and `ydb udf describe --help`. The interface below
-  uses a manifest for both modules and libraries. If the installed CLI lacks
-  `udf` or has a different interface, report the mismatch and obtain a compatible
-  CLI; do not require a full YDB checkout or fall back to internal upload helpers.
+- Inspect the selected binary's help: try `ydb udf upload --help` and, if that
+  command group is absent, `ydb experimental udf upload --help`. Also check
+  `describe --help` under the same prefix. Keep that prefix for all UDF commands;
+  do not infer that UDF support is absent from a failed `ydb udf` check alone.
+  The interface below uses a manifest for both modules and libraries. If neither
+  prefix is available, obtain a compatible CLI, potentially an experimental
+  build, and select its executable with `YDB_BIN`. Do not require a full YDB
+  checkout or fall back to internal upload helpers.
 - Use existing authentication settings; do not print credentials or commit them.
   The server must enable the UDF service and permit the caller to upload modules.
 - Identify the requested binary and manifest. A `.so` suffix is normal for this
@@ -30,7 +36,11 @@ user's selected values, not example defaults:
 ```bash
 udf_cli=("${YDB_BIN:-ydb}" -e "${YDB_ENDPOINT:?Set the selected endpoint}" \
     -d "${YDB_DATABASE:?Set the selected database}")
-"${udf_cli[@]}" udf list --format json
+# Select the variant confirmed by --help:
+udf_cmd=("${udf_cli[@]}" udf)
+# For the experimental command group, use this instead:
+# udf_cmd=("${udf_cli[@]}" experimental udf)
+"${udf_cmd[@]}" list --format json
 ```
 
 ## Resolve runtime dependencies first
@@ -61,7 +71,7 @@ set `sdk_manifest` to that file's path:
 ```
 
 ```bash
-"${udf_cli[@]}" udf upload \
+"${udf_cmd[@]}" upload \
     --file ydb/udfs/wasm/sdk/libwasm-sdk.so \
     --manifest "$sdk_manifest" --create-only --format json
 ```
@@ -74,7 +84,7 @@ The manifest supplies the name and type. Do not use the obsolete upload flags
 For the bundled Hello example:
 
 ```bash
-"${udf_cli[@]}" udf upload \
+"${udf_cmd[@]}" upload \
     --file examples/hello/libexamples-hello.so \
     --manifest examples/hello/manifest.json \
     --create-only --format json
@@ -97,7 +107,7 @@ Poll this command at a modest interval, such as two seconds, with a bounded
 deadline, such as 180 seconds unless the user supplied another timeout:
 
 ```bash
-"${udf_cli[@]}" udf describe --name "$uploaded_name" --format json
+"${udf_cmd[@]}" describe --name "$uploaded_name" --format json
 ```
 
 Interpret the JSON as follows:
@@ -128,6 +138,8 @@ module's supplied smoke query after readiness. For Hello:
 "${udf_cli[@]}" sql -s 'SELECT Hello::hello(42l) AS answer;'
 ```
 
+SQL uses the CLI base command, not `udf_cmd`; inspect its help separately if
+the selected experimental build exposes SQL under a different prefix.
 Expect `answer = 42`. A short bounded retry can accommodate metadata refresh
 after compilation; persistent lookup or execution failures require diagnosis,
 not another upload. Use a module-specific query for other modules.
