@@ -36,6 +36,10 @@ The runtime is uploaded as library `sdk`, then the module with its manifest.
 Use a separately installed compatible YDB CLI. This repository does not build
 the server or the CLI. The example query is `SELECT Hello::hello(42l);`.
 
+For cluster settings, CLI setup, runtime and module uploads, and a SQL smoke
+query, follow the [user guide (in Russian)](docs/getting-started.md). It also covers
+experimental CLI commands, updates, troubleshooting, and using the agent skill.
+
 Agent instructions for uploading modules, resolving runtime dependencies, and
 waiting for compilation are in
 [`.agent/skills/ydb-udf-cli/SKILL.md`](.agent/skills/ydb-udf-cli/SKILL.md).
