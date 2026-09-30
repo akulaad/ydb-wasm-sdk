@@ -2,9 +2,9 @@
 
 ## Source of truth
 
-The initial upstream is `https://github.com/akulaad/ydb.git`, whose selected
-revision contains the WASM UDF implementation. Change the upstream URL only when
-the selected revision and features are available in the replacement repository.
+The upstream is `https://github.com/ydb-platform/ydb.git`. The SDK now imports
+the official repository, including the WASM UDF implementation and the guest
+`yexception` example. `sdk.lock.json` pins the exact imported revision.
 
 For bootstrap, the export specification and exporter live in this SDK repository;
 no change to the upstream YDB checkout is required. Shared sources remain owned

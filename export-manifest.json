@@ -32,8 +32,8 @@
     },
     "build/conf/compilers/gnu_compiler.conf": {
       "mode": "100644",
-      "sha256": "b5d658f14d9502e4b4b1e682b5af7f962c58038eb3058cf4b76403b1c7bc95c8",
-      "upstream_sha256": "b5d658f14d9502e4b4b1e682b5af7f962c58038eb3058cf4b76403b1c7bc95c8"
+      "sha256": "e2fb683df6a6ec764d5fafec92239627299c42fd79fcaa77d514c8d60881d0d9",
+      "upstream_sha256": "e2fb683df6a6ec764d5fafec92239627299c42fd79fcaa77d514c8d60881d0d9"
     },
     "build/conf/compilers/msvc_compiler.conf": {
       "mode": "100644",
@@ -92,13 +92,13 @@
     },
     "build/conf/go.conf": {
       "mode": "100644",
-      "sha256": "15599c8a75ba9aad09fab82969371d13f303f9d4564dab2d9d98ebc0dd7f20e4",
-      "upstream_sha256": "15599c8a75ba9aad09fab82969371d13f303f9d4564dab2d9d98ebc0dd7f20e4"
+      "sha256": "e1d948254ffa9880c36dada9da25992efc0ee8c78637c0afb6fb904004ade35d",
+      "upstream_sha256": "e1d948254ffa9880c36dada9da25992efc0ee8c78637c0afb6fb904004ade35d"
     },
     "build/conf/java.conf": {
       "mode": "100644",
-      "sha256": "b9fb13577a4d6bc70509cebe272e6a304a28606418e72bced597daf3f8936ecc",
-      "upstream_sha256": "b9fb13577a4d6bc70509cebe272e6a304a28606418e72bced597daf3f8936ecc"
+      "sha256": "73f0c0218c6072a896a6921a0fbd6508e1a4d22b239e07128883e612e09f74c0",
+      "upstream_sha256": "73f0c0218c6072a896a6921a0fbd6508e1a4d22b239e07128883e612e09f74c0"
     },
     "build/conf/license.conf": {
       "mode": "100644",
@@ -152,13 +152,13 @@
     },
     "build/conf/proto.conf": {
       "mode": "100644",
-      "sha256": "00b1c371055787baf51eb4c21e126b2000b5843c5f23652ee3af6a527ba21270",
-      "upstream_sha256": "00b1c371055787baf51eb4c21e126b2000b5843c5f23652ee3af6a527ba21270"
+      "sha256": "466024e53fca654c54cf923cea103128a290ead341e9c3eb7987a351b1f75227",
+      "upstream_sha256": "466024e53fca654c54cf923cea103128a290ead341e9c3eb7987a351b1f75227"
     },
     "build/conf/python.conf": {
       "mode": "100644",
-      "sha256": "309f813679a968be875a0eb06f619a7cddb2d5aae673cc827756c12afe503b34",
-      "upstream_sha256": "309f813679a968be875a0eb06f619a7cddb2d5aae673cc827756c12afe503b34"
+      "sha256": "e3bf2b53974aa02fbc1ccac1ff175979c9b60643e141a540c25c6c7899e587dc",
+      "upstream_sha256": "e3bf2b53974aa02fbc1ccac1ff175979c9b60643e141a540c25c6c7899e587dc"
     },
     "build/conf/settings.conf": {
       "mode": "100644",
@@ -172,8 +172,8 @@
     },
     "build/conf/sysincl.conf": {
       "mode": "100644",
-      "sha256": "c6df195c4c40b3f02c5aacbc824792f075baf0535f5f0982edef51ef6eeafe7f",
-      "upstream_sha256": "c6df195c4c40b3f02c5aacbc824792f075baf0535f5f0982edef51ef6eeafe7f"
+      "sha256": "30b32ba1ed5c068f66324f0d0bcc4e3e5828ce736740b48d14fb4a97d0628f5c",
+      "upstream_sha256": "30b32ba1ed5c068f66324f0d0bcc4e3e5828ce736740b48d14fb4a97d0628f5c"
     },
     "build/conf/toolchains/gnu_toolchain.conf": {
       "mode": "100644",
@@ -192,8 +192,8 @@
     },
     "build/conf/ts/node_modules.conf": {
       "mode": "100644",
-      "sha256": "47609a0f735a33dc77125ed2e81d039d301178cc65be1fcff132dafc6bf68679",
-      "upstream_sha256": "47609a0f735a33dc77125ed2e81d039d301178cc65be1fcff132dafc6bf68679"
+      "sha256": "254fb642cc91243f0eb71d43468fe01969d40a789f794912ce99c836aba3f50c",
+      "upstream_sha256": "254fb642cc91243f0eb71d43468fe01969d40a789f794912ce99c836aba3f50c"
     },
     "build/conf/ts/ts.conf": {
       "mode": "100644",
@@ -1002,13 +1002,13 @@
     },
     "build/external_resources/ymake/public.resources.json": {
       "mode": "100644",
-      "sha256": "86f096a3ea86e15c087dac75ea30565b7a27f72465107cdea6c3895f73f88c28",
-      "upstream_sha256": "86f096a3ea86e15c087dac75ea30565b7a27f72465107cdea6c3895f73f88c28"
+      "sha256": "2b95e7c8f92b538f48990fb94b51ca8612e6a63cf89a574a128e4824290ebe72",
+      "upstream_sha256": "2b95e7c8f92b538f48990fb94b51ca8612e6a63cf89a574a128e4824290ebe72"
     },
     "build/external_resources/ymake/resources.json": {
       "mode": "100644",
-      "sha256": "27e0f0f3de908887a0deda8af6d26782d1641feb75c4f482534cbe352da3b4c6",
-      "upstream_sha256": "27e0f0f3de908887a0deda8af6d26782d1641feb75c4f482534cbe352da3b4c6"
+      "sha256": "d20f3179c2c5b005c55b3b31eb3304826cacb1a1cc5b3651f3cea5dac7eb0424",
+      "upstream_sha256": "d20f3179c2c5b005c55b3b31eb3304826cacb1a1cc5b3651f3cea5dac7eb0424"
     },
     "build/induced/by_bison/ya.make": {
       "mode": "100644",
@@ -1047,8 +1047,8 @@
     },
     "build/mapping.conf.json": {
       "mode": "100644",
-      "sha256": "6cd2e58efaf40886a59677b943bfda5892a4db09e5cc09b26c170ac5bf080222",
-      "upstream_sha256": "6cd2e58efaf40886a59677b943bfda5892a4db09e5cc09b26c170ac5bf080222"
+      "sha256": "22d1445c313cf2ad4400f8fc9db04a97d63f52c5a50f7d6b61737d9b7fa44a56",
+      "upstream_sha256": "22d1445c313cf2ad4400f8fc9db04a97d63f52c5a50f7d6b61737d9b7fa44a56"
     },
     "build/platform/binutils/binutils.resource": {
       "mode": "100644",
@@ -1090,10 +1090,15 @@
       "sha256": "2b24426e1a52183bd587f4da5d46634a24193ec6c9fc3c6236ea6adfd7f273ca",
       "upstream_sha256": "2b24426e1a52183bd587f4da5d46634a24193ec6c9fc3c6236ea6adfd7f273ca"
     },
+    "build/platform/clang/clang22.json": {
+      "mode": "100644",
+      "sha256": "6ff63d430410ad4bb6c09a2a3f22ce8d8ea0be16f86570331886a4decd5be583",
+      "upstream_sha256": "6ff63d430410ad4bb6c09a2a3f22ce8d8ea0be16f86570331886a4decd5be583"
+    },
     "build/platform/clang/ya.make": {
       "mode": "100644",
-      "sha256": "0f7dd28b420aded01bddb7cce4ec4ac151e2c421d02e2ffb14ef152f8371aa29",
-      "upstream_sha256": "0f7dd28b420aded01bddb7cce4ec4ac151e2c421d02e2ffb14ef152f8371aa29"
+      "sha256": "bab86eff1b9fdc8d2f7cdeb6502df68a5e23ef99b332fb076570231b3a069c8a",
+      "upstream_sha256": "bab86eff1b9fdc8d2f7cdeb6502df68a5e23ef99b332fb076570231b3a069c8a"
     },
     "build/platform/flang/resources.json": {
       "mode": "100644",
@@ -1282,13 +1287,13 @@
     },
     "build/platform/test_tool/host.ya.make.inc": {
       "mode": "100644",
-      "sha256": "49d81ebd1afc8ef723b58644a6a8d48bc013b7222ce7eb6f47562655dbc1c70c",
-      "upstream_sha256": "49d81ebd1afc8ef723b58644a6a8d48bc013b7222ce7eb6f47562655dbc1c70c"
+      "sha256": "d907338dec3a2b70ce59926559e13b5e6c70050ba635f185409096a6485232cf",
+      "upstream_sha256": "d907338dec3a2b70ce59926559e13b5e6c70050ba635f185409096a6485232cf"
     },
     "build/platform/test_tool/host_os.ya.make.inc": {
       "mode": "100644",
-      "sha256": "3b7b862418255a59ae23d0b47d9e92c40e5c6ef07f721296aaa4ae77d8ace8e8",
-      "upstream_sha256": "3b7b862418255a59ae23d0b47d9e92c40e5c6ef07f721296aaa4ae77d8ace8e8"
+      "sha256": "83a50206ebb2fd5b46dd4266111e19471c1bda1404ecfa1a518ae2520baf6339",
+      "upstream_sha256": "83a50206ebb2fd5b46dd4266111e19471c1bda1404ecfa1a518ae2520baf6339"
     },
     "build/platform/test_tool/ya.make": {
       "mode": "100644",
@@ -1312,8 +1317,8 @@
     },
     "build/platform/yfm/resources.json": {
       "mode": "100644",
-      "sha256": "fd8104e555bbedec8aca8ad41fa8d78cd7937cfe4b18dc591ae1298a938ba247",
-      "upstream_sha256": "fd8104e555bbedec8aca8ad41fa8d78cd7937cfe4b18dc591ae1298a938ba247"
+      "sha256": "37b2946bf199879794c14e937379a312dedafa4d3a889a758441d385ee9a9890",
+      "upstream_sha256": "37b2946bf199879794c14e937379a312dedafa4d3a889a758441d385ee9a9890"
     },
     "build/platform/yfm/ya.make": {
       "mode": "100644",
@@ -1767,8 +1772,8 @@
     },
     "build/plugins/ytest.py": {
       "mode": "100644",
-      "sha256": "e526053067f289f550bf383b5b2288b6df3e4ba58ff1b0b816c221f1cfefebc5",
-      "upstream_sha256": "e526053067f289f550bf383b5b2288b6df3e4ba58ff1b0b816c221f1cfefebc5"
+      "sha256": "803fda8174b740032ff32e300710a9447f72ff1d5307c776dcfa118ad9071a7b",
+      "upstream_sha256": "803fda8174b740032ff32e300710a9447f72ff1d5307c776dcfa118ad9071a7b"
     },
     "build/prebuilt/contrib/tools/protoc/plugins/cpp_styleguide/resources.json": {
       "mode": "100644",
@@ -2012,8 +2017,8 @@
     },
     "build/scripts/cpp_proto_wrapper.py": {
       "mode": "100644",
-      "sha256": "4c369c96906709b218727b23d477a5de695fc68fd0b64ee62b14f2c7d9a4b1fd",
-      "upstream_sha256": "4c369c96906709b218727b23d477a5de695fc68fd0b64ee62b14f2c7d9a4b1fd"
+      "sha256": "cb8c3cb46555016abd2c0d0e2f0ff0d0356cc1eab20525cb2d701033db8608be",
+      "upstream_sha256": "cb8c3cb46555016abd2c0d0e2f0ff0d0356cc1eab20525cb2d701033db8608be"
     },
     "build/scripts/create_jcoverage_report.py": {
       "mode": "100644",
@@ -2767,8 +2772,8 @@
     },
     "build/sysincl/misc.yml": {
       "mode": "100644",
-      "sha256": "281655555b091c81cc882a6e69fdc1eda45d371d3a020f464f6ccbfa810395ce",
-      "upstream_sha256": "281655555b091c81cc882a6e69fdc1eda45d371d3a020f464f6ccbfa810395ce"
+      "sha256": "3d1916d6fca0025a6e92e45d059d9e6dd3bac13f01e3e163bc1b03b92bdb56d2",
+      "upstream_sha256": "3d1916d6fca0025a6e92e45d059d9e6dd3bac13f01e3e163bc1b03b92bdb56d2"
     },
     "build/sysincl/nds32.yml": {
       "mode": "100644",
@@ -2905,6 +2910,11 @@
       "sha256": "109c707033b83ee0772f056d3ff216d1ff612782a322aad8141f6338a44e3814",
       "upstream_sha256": "109c707033b83ee0772f056d3ff216d1ff612782a322aad8141f6338a44e3814"
     },
+    "build/sysincl/zephyr.yml": {
+      "mode": "100644",
+      "sha256": "348f98f1bbaf141c72e36d5c6ecda93340d008f6271835a92537ecedf0f78faa",
+      "upstream_sha256": "348f98f1bbaf141c72e36d5c6ecda93340d008f6271835a92537ecedf0f78faa"
+    },
     "build/ya.conf.json": {
       "mode": "100644",
       "sha256": "8bfadbb33b99257f8b81578158bea2de55a4934dc780230b099ee9a79270e117",
@@ -2912,8 +2922,8 @@
     },
     "build/ymake.core.conf": {
       "mode": "100644",
-      "sha256": "8479161fe764d0bd9b796dc6d1ede43a313a56ecab8d1bb7f96d7874e7da42b6",
-      "upstream_sha256": "8479161fe764d0bd9b796dc6d1ede43a313a56ecab8d1bb7f96d7874e7da42b6"
+      "sha256": "84027ff19179dade4850e150931e183a13d8f68cc62ef3f07e775280714e2133",
+      "upstream_sha256": "84027ff19179dade4850e150931e183a13d8f68cc62ef3f07e775280714e2133"
     },
     "build/ymake_conf.py": {
       "mode": "100755",
@@ -3502,8 +3512,8 @@
     },
     "contrib/libs/cxxsupp/builtins/.yandex_meta/devtools.licenses.report": {
       "mode": "100644",
-      "sha256": "e095b68f9e954cebfd42de669ad14064c1a5117a97a5d88ba41e21b59070221c",
-      "upstream_sha256": "e095b68f9e954cebfd42de669ad14064c1a5117a97a5d88ba41e21b59070221c"
+      "sha256": "31f2719eab5f28f88162986ed65c783822ac174fa2b176ccab51c818120cb126",
+      "upstream_sha256": "31f2719eab5f28f88162986ed65c783822ac174fa2b176ccab51c818120cb126"
     },
     "contrib/libs/cxxsupp/builtins/.yandex_meta/licenses.list.txt": {
       "mode": "100644",
@@ -3537,8 +3547,8 @@
     },
     "contrib/libs/cxxsupp/builtins/SECURITY.md": {
       "mode": "100644",
-      "sha256": "bf1e70a2e52a213669958fa485fa69e13504fcdbfa0d3c1e34ec61dbcce9d1dd",
-      "upstream_sha256": "bf1e70a2e52a213669958fa485fa69e13504fcdbfa0d3c1e34ec61dbcce9d1dd"
+      "sha256": "4eb8f01aafbf7ad22ec3292bd11d57367b1f0678aa2f937f9347f04ab92a196b",
+      "upstream_sha256": "4eb8f01aafbf7ad22ec3292bd11d57367b1f0678aa2f937f9347f04ab92a196b"
     },
     "contrib/libs/cxxsupp/builtins/absvdi2.c": {
       "mode": "100644",
@@ -3569,6 +3579,11 @@
       "mode": "100644",
       "sha256": "b23037fd20a30845a5c19414659ac2820de33a5ea4abf65c2aceaa8ba94fd102",
       "upstream_sha256": "b23037fd20a30845a5c19414659ac2820de33a5ea4abf65c2aceaa8ba94fd102"
+    },
+    "contrib/libs/cxxsupp/builtins/addtf3.cpp": {
+      "mode": "100644",
+      "sha256": "896531521f9d8710e64c7142a097af073fc5f0ec36e11cf5a11a4162aa8f47d8",
+      "upstream_sha256": "896531521f9d8710e64c7142a097af073fc5f0ec36e11cf5a11a4162aa8f47d8"
     },
     "contrib/libs/cxxsupp/builtins/addvdi3.c": {
       "mode": "100644",
@@ -3617,8 +3632,8 @@
     },
     "contrib/libs/cxxsupp/builtins/atomic.c": {
       "mode": "100644",
-      "sha256": "9fcf5fc6f0cb1da23f004fa9bc3af1cfcb5589f0c8d20e7b6de863591b60eb98",
-      "upstream_sha256": "9fcf5fc6f0cb1da23f004fa9bc3af1cfcb5589f0c8d20e7b6de863591b60eb98"
+      "sha256": "49460e687fa4d9c32321ade9d06f70740f9389183028922d97d06db97e9c581d",
+      "upstream_sha256": "49460e687fa4d9c32321ade9d06f70740f9389183028922d97d06db97e9c581d"
     },
     "contrib/libs/cxxsupp/builtins/atomic_flag_clear.c": {
       "mode": "100644",
@@ -3662,8 +3677,8 @@
     },
     "contrib/libs/cxxsupp/builtins/clear_cache.c": {
       "mode": "100644",
-      "sha256": "f802e4263d5c1c4d52281d739c032eb7081a7a34c12084b960769b62a7e1fafc",
-      "upstream_sha256": "f802e4263d5c1c4d52281d739c032eb7081a7a34c12084b960769b62a7e1fafc"
+      "sha256": "8eadee087b9c0ba1e2f2a3a057007069bd1874556d7e7674682e1c5e99def7d1",
+      "upstream_sha256": "8eadee087b9c0ba1e2f2a3a057007069bd1874556d7e7674682e1c5e99def7d1"
     },
     "contrib/libs/cxxsupp/builtins/clzdi2.c": {
       "mode": "100644",
@@ -3707,18 +3722,18 @@
     },
     "contrib/libs/cxxsupp/builtins/cpu_model/cpu_model.h": {
       "mode": "100644",
-      "sha256": "4b374f7dcba5cbb9520b621ab596dc691af356772fc019246ab419f4c1c0f77c",
-      "upstream_sha256": "4b374f7dcba5cbb9520b621ab596dc691af356772fc019246ab419f4c1c0f77c"
+      "sha256": "0b2f65e64cca9bf4287eec344c6802cdf850c6d6c48fb4c1a7bdd787974af733",
+      "upstream_sha256": "0b2f65e64cca9bf4287eec344c6802cdf850c6d6c48fb4c1a7bdd787974af733"
     },
     "contrib/libs/cxxsupp/builtins/cpu_model/x86.c": {
       "mode": "100644",
-      "sha256": "3868c32e6509a7e8f6a6d5fb161d4ef8d8cf80577870882eff47b56dd0aba79f",
-      "upstream_sha256": "3868c32e6509a7e8f6a6d5fb161d4ef8d8cf80577870882eff47b56dd0aba79f"
+      "sha256": "2f4ae90693c03fd5d0741d2b8b68edac5fed132a6fc6990ec540b0e1499e87ed",
+      "upstream_sha256": "2f4ae90693c03fd5d0741d2b8b68edac5fed132a6fc6990ec540b0e1499e87ed"
     },
     "contrib/libs/cxxsupp/builtins/crtbegin.c": {
       "mode": "100644",
-      "sha256": "9fc196031fc27b54fdf98c0344e707dbff26424eb06e3de850631f357c30eaea",
-      "upstream_sha256": "9fc196031fc27b54fdf98c0344e707dbff26424eb06e3de850631f357c30eaea"
+      "sha256": "3c0d6f5f4f7b1740b03240282ed02b46c152b5646404c2523a86c61b21a16650",
+      "upstream_sha256": "3c0d6f5f4f7b1740b03240282ed02b46c152b5646404c2523a86c61b21a16650"
     },
     "contrib/libs/cxxsupp/builtins/crtend.c": {
       "mode": "100644",
@@ -3807,8 +3822,8 @@
     },
     "contrib/libs/cxxsupp/builtins/emutls.c": {
       "mode": "100644",
-      "sha256": "a4437f3e329a0835adbc7df38e36df12f358d05c073b11813c409f849c2345d2",
-      "upstream_sha256": "a4437f3e329a0835adbc7df38e36df12f358d05c073b11813c409f849c2345d2"
+      "sha256": "f5044bff3092ab8213807685c58447ecebff752eb51d159950739676cf12c25b",
+      "upstream_sha256": "f5044bff3092ab8213807685c58447ecebff752eb51d159950739676cf12c25b"
     },
     "contrib/libs/cxxsupp/builtins/enable_execute_stack.c": {
       "mode": "100644",
@@ -4107,13 +4122,13 @@
     },
     "contrib/libs/cxxsupp/builtins/fp_add_impl.inc": {
       "mode": "100644",
-      "sha256": "327276adbb45d7e2cb2da1cf98b508da00b43b0cb84d4883d07878a0a9a1cd07",
-      "upstream_sha256": "327276adbb45d7e2cb2da1cf98b508da00b43b0cb84d4883d07878a0a9a1cd07"
+      "sha256": "d6fa6e3c97cdd0dde376e73711c7ec22a2e0b3aa6bbda310944eeb44fd0821ee",
+      "upstream_sha256": "d6fa6e3c97cdd0dde376e73711c7ec22a2e0b3aa6bbda310944eeb44fd0821ee"
     },
     "contrib/libs/cxxsupp/builtins/fp_compare_impl.inc": {
       "mode": "100644",
-      "sha256": "d248a47ce628536d952155366bf0eabc46a4a3b419091566c3217508fef882cf",
-      "upstream_sha256": "d248a47ce628536d952155366bf0eabc46a4a3b419091566c3217508fef882cf"
+      "sha256": "a9297de8be6f4d218bd4e5e63824905298e847b34d279f2ebc2e3525caf8d21b",
+      "upstream_sha256": "a9297de8be6f4d218bd4e5e63824905298e847b34d279f2ebc2e3525caf8d21b"
     },
     "contrib/libs/cxxsupp/builtins/fp_div_impl.inc": {
       "mode": "100644",
@@ -4144,6 +4159,11 @@
       "mode": "100644",
       "sha256": "cf3a5301c95986a9b392edba32dfe7ac27d3352d266e284e528a09413f84f6cc",
       "upstream_sha256": "cf3a5301c95986a9b392edba32dfe7ac27d3352d266e284e528a09413f84f6cc"
+    },
+    "contrib/libs/cxxsupp/builtins/fp_libc_config.h": {
+      "mode": "100644",
+      "sha256": "891c391a5d4a226c16fd122d93a6d591b510bb23582bf9265bb82ed5b09258a1",
+      "upstream_sha256": "891c391a5d4a226c16fd122d93a6d591b510bb23582bf9265bb82ed5b09258a1"
     },
     "contrib/libs/cxxsupp/builtins/fp_mode.c": {
       "mode": "100644",
@@ -4187,13 +4207,13 @@
     },
     "contrib/libs/cxxsupp/builtins/int_lib.h": {
       "mode": "100644",
-      "sha256": "d79f2a9f4756e89fdd7a786fea5361720f40563a6d7c34d078505a236892d28f",
-      "upstream_sha256": "d79f2a9f4756e89fdd7a786fea5361720f40563a6d7c34d078505a236892d28f"
+      "sha256": "a5735bf1bfacecd6cf5785ed19ae62a981ff2f0923c38caa99f4af47f2be57b5",
+      "upstream_sha256": "a5735bf1bfacecd6cf5785ed19ae62a981ff2f0923c38caa99f4af47f2be57b5"
     },
     "contrib/libs/cxxsupp/builtins/int_math.h": {
       "mode": "100644",
-      "sha256": "42d83ee41543909de016379a8251e211a6890cbc7945c433bb30f4ba29d7b10c",
-      "upstream_sha256": "42d83ee41543909de016379a8251e211a6890cbc7945c433bb30f4ba29d7b10c"
+      "sha256": "ddc3abe104d4500630174d7e0c3190d203c968213eb189097f70aec55a33c352",
+      "upstream_sha256": "ddc3abe104d4500630174d7e0c3190d203c968213eb189097f70aec55a33c352"
     },
     "contrib/libs/cxxsupp/builtins/int_mulo_impl.inc": {
       "mode": "100644",
@@ -4217,8 +4237,8 @@
     },
     "contrib/libs/cxxsupp/builtins/int_types.h": {
       "mode": "100644",
-      "sha256": "bc956eca1626fee5b6242053bafd92bf0b1def230140ee36a9725034aeb02fa8",
-      "upstream_sha256": "bc956eca1626fee5b6242053bafd92bf0b1def230140ee36a9725034aeb02fa8"
+      "sha256": "198552b25faf8a75b077ea145591cd7f6762b7f2712321b18f5e38fee8cc2a1e",
+      "upstream_sha256": "198552b25faf8a75b077ea145591cd7f6762b7f2712321b18f5e38fee8cc2a1e"
     },
     "contrib/libs/cxxsupp/builtins/int_util.c": {
       "mode": "100644",
@@ -4257,8 +4277,8 @@
     },
     "contrib/libs/cxxsupp/builtins/muldc3.c": {
       "mode": "100644",
-      "sha256": "6b5c3fba3f59901c717168ba3a51dab26674541ac16a7b870ce7af0f3e339644",
-      "upstream_sha256": "6b5c3fba3f59901c717168ba3a51dab26674541ac16a7b870ce7af0f3e339644"
+      "sha256": "500d1094775c04917d1bd7d9f8ede3c83960400b3c61df2c67455677ab02bd63",
+      "upstream_sha256": "500d1094775c04917d1bd7d9f8ede3c83960400b3c61df2c67455677ab02bd63"
     },
     "contrib/libs/cxxsupp/builtins/muldf3.c": {
       "mode": "100644",
@@ -4612,8 +4632,8 @@
     },
     "contrib/libs/cxxsupp/builtins/ya.make": {
       "mode": "100644",
-      "sha256": "811e9f4c06f18a683456d7a1785c058cf7a1508ec57ef50719b56e084146f77c",
-      "upstream_sha256": "811e9f4c06f18a683456d7a1785c058cf7a1508ec57ef50719b56e084146f77c"
+      "sha256": "8d404b99fe13557018083b19e30ad8c2431632aba7b20e097f65833019f3a0f7",
+      "upstream_sha256": "8d404b99fe13557018083b19e30ad8c2431632aba7b20e097f65833019f3a0f7"
     },
     "contrib/libs/cxxsupp/libcxx/.yandex_meta/devtools.copyrights.report": {
       "mode": "100644",
@@ -6262,8 +6282,8 @@
     },
     "contrib/libs/cxxsupp/libcxx/include/__config": {
       "mode": "100644",
-      "sha256": "85e05e07943f08cd97eec8c8cc0d09f2b5b7bf76c0fa00b7262e46d77fd903b3",
-      "upstream_sha256": "85e05e07943f08cd97eec8c8cc0d09f2b5b7bf76c0fa00b7262e46d77fd903b3"
+      "sha256": "a64c4197b7c7d4f69bcdb9a14ccba0db7addec6228f7344936c6ab03dcfd7d45",
+      "upstream_sha256": "a64c4197b7c7d4f69bcdb9a14ccba0db7addec6228f7344936c6ab03dcfd7d45"
     },
     "contrib/libs/cxxsupp/libcxx/include/__config_epilogue.h": {
       "mode": "100644",
@@ -6302,8 +6322,8 @@
     },
     "contrib/libs/cxxsupp/libcxx/include/__configuration/platform.h": {
       "mode": "100644",
-      "sha256": "d74190b4d6ebea5463463c0d49704d9ad7c1068f8f561e5416e61e6ecfb13d22",
-      "upstream_sha256": "d74190b4d6ebea5463463c0d49704d9ad7c1068f8f561e5416e61e6ecfb13d22"
+      "sha256": "595a3935873121c45a74f55a8420cbef4393a1aa4d592b67a6235ed8d7e84c28",
+      "upstream_sha256": "595a3935873121c45a74f55a8420cbef4393a1aa4d592b67a6235ed8d7e84c28"
     },
     "contrib/libs/cxxsupp/libcxx/include/__cstddef/byte.h": {
       "mode": "100644",
@@ -10037,8 +10057,8 @@
     },
     "contrib/libs/cxxsupp/libcxx/src/filesystem/posix_compat.h": {
       "mode": "100644",
-      "sha256": "f3089823861beae71abaaae79918b576600af408f0d4b1a3860ab63d259ef984",
-      "upstream_sha256": "f3089823861beae71abaaae79918b576600af408f0d4b1a3860ab63d259ef984"
+      "sha256": "0d2f0c492e3745b81b7c5a875332a0248fa41d09ef2ae1bd29c27977017b7fd5",
+      "upstream_sha256": "0d2f0c492e3745b81b7c5a875332a0248fa41d09ef2ae1bd29c27977017b7fd5"
     },
     "contrib/libs/cxxsupp/libcxx/src/filesystem/time_utils.h": {
       "mode": "100644",
@@ -10372,8 +10392,8 @@
     },
     "contrib/libs/cxxsupp/libcxx/ya.make": {
       "mode": "100644",
-      "sha256": "3121b67600dc685426c2673839f5b999f2382080a00e236ca18f50978056531e",
-      "upstream_sha256": "3121b67600dc685426c2673839f5b999f2382080a00e236ca18f50978056531e"
+      "sha256": "a2e9bb51b9903a6f7fd685afca1dd1df2df3d59c7a04b2803a2a280cc353a865",
+      "upstream_sha256": "a2e9bb51b9903a6f7fd685afca1dd1df2df3d59c7a04b2803a2a280cc353a865"
     },
     "contrib/libs/cxxsupp/libcxxabi-parts/ya.make": {
       "mode": "100644",
@@ -10562,8 +10582,8 @@
     },
     "contrib/libs/cxxsupp/libcxxabi/ya.make": {
       "mode": "100644",
-      "sha256": "bf58d18fb0d607cecb4d62c83d8a5fc63c1e37ca341e5948bba515f316af7a3c",
-      "upstream_sha256": "bf58d18fb0d607cecb4d62c83d8a5fc63c1e37ca341e5948bba515f316af7a3c"
+      "sha256": "a296725da403e10a1468373aaf373430d5e61c348015411b66fadf4e0920f9b1",
+      "upstream_sha256": "a296725da403e10a1468373aaf373430d5e61c348015411b66fadf4e0920f9b1"
     },
     "contrib/libs/cxxsupp/libcxxcuda11/.yandex_meta/devtools.copyrights.report": {
       "mode": "100644",
@@ -11227,8 +11247,8 @@
     },
     "contrib/libs/libunwind/src/AddressSpace.hpp": {
       "mode": "100644",
-      "sha256": "66ebbc93ca448bbac17cf5666e417fc8962e67298930d88ff5a3530550699bf3",
-      "upstream_sha256": "66ebbc93ca448bbac17cf5666e417fc8962e67298930d88ff5a3530550699bf3"
+      "sha256": "611b303e1a1cdb388ad744106443bd44d98c7e4888608d93308d232ddc2e0b3e",
+      "upstream_sha256": "611b303e1a1cdb388ad744106443bd44d98c7e4888608d93308d232ddc2e0b3e"
     },
     "contrib/libs/libunwind/src/CompactUnwinder.hpp": {
       "mode": "100644",
@@ -11347,8 +11367,8 @@
     },
     "contrib/libs/libunwind/ya.make": {
       "mode": "100644",
-      "sha256": "7183b0d3aaa4f76df314ae02d931e52594aca36fb129788eda562346d9bab210",
-      "upstream_sha256": "7183b0d3aaa4f76df314ae02d931e52594aca36fb129788eda562346d9bab210"
+      "sha256": "dd282b897ee8ef9f5915fda2e6bbb3800664ce1cc42fca5571ed7043c4e90358",
+      "upstream_sha256": "dd282b897ee8ef9f5915fda2e6bbb3800664ce1cc42fca5571ed7043c4e90358"
     },
     "contrib/libs/linux-headers/.yandex_meta/devtools.copyrights.report": {
       "mode": "100644",
@@ -11570,96 +11590,6 @@
       "sha256": "b6bdcd528bce555b2ecb58e8a1624e3e13e09312c31318023c4e86b957e2b01f",
       "upstream_sha256": "b6bdcd528bce555b2ecb58e8a1624e3e13e09312c31318023c4e86b957e2b01f"
     },
-    "contrib/libs/linux-headers/asm/unistd-eabi.h": {
-      "mode": "100644",
-      "sha256": "d286e3d6ae5221b9352842bdbd4c30075a5d1c35744b8c470fdafa26666310ee",
-      "upstream_sha256": "d286e3d6ae5221b9352842bdbd4c30075a5d1c35744b8c470fdafa26666310ee"
-    },
-    "contrib/libs/linux-headers/asm/unistd-eabi_arm.h": {
-      "mode": "100644",
-      "sha256": "01bdbe98706b921d0ed693693dc4440e417cbe19733b95e3ba95f70cf98a6d91",
-      "upstream_sha256": "01bdbe98706b921d0ed693693dc4440e417cbe19733b95e3ba95f70cf98a6d91"
-    },
-    "contrib/libs/linux-headers/asm/unistd-oabi.h": {
-      "mode": "100644",
-      "sha256": "d45163985c70e80952d41e5720f47a339b4e4a93e40e25b6237fadbbba92ed20",
-      "upstream_sha256": "d45163985c70e80952d41e5720f47a339b4e4a93e40e25b6237fadbbba92ed20"
-    },
-    "contrib/libs/linux-headers/asm/unistd-oabi_arm.h": {
-      "mode": "100644",
-      "sha256": "5acb6a3b0b5017b498133f9c88e5d9e34a4f6034eb67db42f02a168cb7913f8c",
-      "upstream_sha256": "5acb6a3b0b5017b498133f9c88e5d9e34a4f6034eb67db42f02a168cb7913f8c"
-    },
-    "contrib/libs/linux-headers/asm/unistd.h": {
-      "mode": "100644",
-      "sha256": "172a8b75a0c699d5e14af23848bd3013a69256c6a9d145e758dd7d714d0a98dc",
-      "upstream_sha256": "172a8b75a0c699d5e14af23848bd3013a69256c6a9d145e758dd7d714d0a98dc"
-    },
-    "contrib/libs/linux-headers/asm/unistd_32.h": {
-      "mode": "100644",
-      "sha256": "fea2a3503d1319314b5e76b24cb086180a7db9c683b3698558a66c86f5a2ed9a",
-      "upstream_sha256": "fea2a3503d1319314b5e76b24cb086180a7db9c683b3698558a66c86f5a2ed9a"
-    },
-    "contrib/libs/linux-headers/asm/unistd_32_powerpc.h": {
-      "mode": "100644",
-      "sha256": "bbd2719a9dd029382bea6751ee0f805e071f9e24fc31763c63d1cab830a6aa54",
-      "upstream_sha256": "bbd2719a9dd029382bea6751ee0f805e071f9e24fc31763c63d1cab830a6aa54"
-    },
-    "contrib/libs/linux-headers/asm/unistd_32_x86.h": {
-      "mode": "100644",
-      "sha256": "e75c5e1b5ef6e5f85b6a9ae6b9cad3d838a065e2c7049948d4f3c6a0d7d21f52",
-      "upstream_sha256": "e75c5e1b5ef6e5f85b6a9ae6b9cad3d838a065e2c7049948d4f3c6a0d7d21f52"
-    },
-    "contrib/libs/linux-headers/asm/unistd_64.h": {
-      "mode": "100644",
-      "sha256": "c7216ec39ef36b599ff25ef0b614046a6eaf0fde5f54b9f624a7d922342901c1",
-      "upstream_sha256": "c7216ec39ef36b599ff25ef0b614046a6eaf0fde5f54b9f624a7d922342901c1"
-    },
-    "contrib/libs/linux-headers/asm/unistd_64_arm64.h": {
-      "mode": "100644",
-      "sha256": "2072acd594e32c30a61ea3143ade04f04529549d48f92a68e25b21a1fbe9855b",
-      "upstream_sha256": "2072acd594e32c30a61ea3143ade04f04529549d48f92a68e25b21a1fbe9855b"
-    },
-    "contrib/libs/linux-headers/asm/unistd_64_powerpc.h": {
-      "mode": "100644",
-      "sha256": "fa9fc01f4dd0fc83c930f7d34f645e084474dc75e141f4afcaf567d203e097cd",
-      "upstream_sha256": "fa9fc01f4dd0fc83c930f7d34f645e084474dc75e141f4afcaf567d203e097cd"
-    },
-    "contrib/libs/linux-headers/asm/unistd_64_x86.h": {
-      "mode": "100644",
-      "sha256": "ac4d5a8e574a6fffecbd26cb236eab74e316c1cf6deb3025cefe575fad9e2baa",
-      "upstream_sha256": "ac4d5a8e574a6fffecbd26cb236eab74e316c1cf6deb3025cefe575fad9e2baa"
-    },
-    "contrib/libs/linux-headers/asm/unistd_arm.h": {
-      "mode": "100644",
-      "sha256": "ba6e49c6c6e16c8f308cd57faa45b5fe7af91292bd32d05161ae4b6854a05b8d",
-      "upstream_sha256": "ba6e49c6c6e16c8f308cd57faa45b5fe7af91292bd32d05161ae4b6854a05b8d"
-    },
-    "contrib/libs/linux-headers/asm/unistd_arm64.h": {
-      "mode": "100644",
-      "sha256": "cc7ad787b726c5a50b9ed3765977beadc8867f7933a9f9daa1747d77ce7bda06",
-      "upstream_sha256": "cc7ad787b726c5a50b9ed3765977beadc8867f7933a9f9daa1747d77ce7bda06"
-    },
-    "contrib/libs/linux-headers/asm/unistd_powerpc.h": {
-      "mode": "100644",
-      "sha256": "af02d81184d2959bdd8fabf4cec7849a6104f76ce23e50b80c765e3fafdd1287",
-      "upstream_sha256": "af02d81184d2959bdd8fabf4cec7849a6104f76ce23e50b80c765e3fafdd1287"
-    },
-    "contrib/libs/linux-headers/asm/unistd_x32.h": {
-      "mode": "100644",
-      "sha256": "3ad5be6de602818cc7f2521f21f087782c4b95701764805c9d34c6463455daa2",
-      "upstream_sha256": "3ad5be6de602818cc7f2521f21f087782c4b95701764805c9d34c6463455daa2"
-    },
-    "contrib/libs/linux-headers/asm/unistd_x32_x86.h": {
-      "mode": "100644",
-      "sha256": "cda372a3e9fa01f42f3d58a25d62867ebeabc4b7639294d3d75ef6eb75fccfd3",
-      "upstream_sha256": "cda372a3e9fa01f42f3d58a25d62867ebeabc4b7639294d3d75ef6eb75fccfd3"
-    },
-    "contrib/libs/linux-headers/asm/unistd_x86.h": {
-      "mode": "100644",
-      "sha256": "a83776c3b064c9d1f04ea0a8228e20eef166508c6c13cd75afbabd3237acc445",
-      "upstream_sha256": "a83776c3b064c9d1f04ea0a8228e20eef166508c6c13cd75afbabd3237acc445"
-    },
     "contrib/libs/linux-headers/linux/futex.h": {
       "mode": "100644",
       "sha256": "638e9c86a640d8b1a289d618cb7c3b15fc0a507197d67d406616644480c91364",
@@ -11699,11 +11629,6 @@
       "mode": "100644",
       "sha256": "895aff99f3d12dd92c94bb9acc469d9e6a28fc88461b0067db4356c4c88c9d0b",
       "upstream_sha256": "895aff99f3d12dd92c94bb9acc469d9e6a28fc88461b0067db4356c4c88c9d0b"
-    },
-    "contrib/libs/linux-headers/linux/unistd.h": {
-      "mode": "100644",
-      "sha256": "01a6f7628ed6f3511eade5891e631c05679e141d031e689a6d028e840032e394",
-      "upstream_sha256": "01a6f7628ed6f3511eade5891e631c05679e141d031e689a6d028e840032e394"
     },
     "contrib/libs/linux-headers/ya.make": {
       "mode": "100644",
@@ -19967,8 +19892,8 @@
     },
     "library/cpp/string_utils/base64/base64.h": {
       "mode": "100644",
-      "sha256": "cb22af6472c71a5f1d7d9214f5eab1c7f2ea46ac66b0b964c9632213c01993bb",
-      "upstream_sha256": "cb22af6472c71a5f1d7d9214f5eab1c7f2ea46ac66b0b964c9632213c01993bb"
+      "sha256": "d6264b45ba940258468abc1490e44dd917fc1b27e9fcaa1fbab083433d49bf52",
+      "upstream_sha256": "d6264b45ba940258468abc1490e44dd917fc1b27e9fcaa1fbab083433d49bf52"
     },
     "library/cpp/string_utils/base64/base64_decode_uneven_ut.cpp": {
       "mode": "100644",
@@ -20062,8 +19987,8 @@
     },
     "util/charset/wide_ut.cpp": {
       "mode": "100644",
-      "sha256": "dacd5ba98748077bcd31981491daf68fcff7605a4d7547c8b084730e94542232",
-      "upstream_sha256": "dacd5ba98748077bcd31981491daf68fcff7605a4d7547c8b084730e94542232"
+      "sha256": "75424f62304c06214a95dcfd6cfe45f144cf988d9823dfc8bef5264e331bb5ef",
+      "upstream_sha256": "75424f62304c06214a95dcfd6cfe45f144cf988d9823dfc8bef5264e331bb5ef"
     },
     "util/charset/ya.make": {
       "mode": "100644",
@@ -21647,8 +21572,8 @@
     },
     "util/string/strip.h": {
       "mode": "100644",
-      "sha256": "1dbfcd1d1a5da6f754c4e3483300718db51e6b49d000ed06574a8f208a9cc041",
-      "upstream_sha256": "1dbfcd1d1a5da6f754c4e3483300718db51e6b49d000ed06574a8f208a9cc041"
+      "sha256": "a34bd4cc2b6887d32f7256736d8dbe7ce48720f6c0716ccf97179181957db3e0",
+      "upstream_sha256": "a34bd4cc2b6887d32f7256736d8dbe7ce48720f6c0716ccf97179181957db3e0"
     },
     "util/string/strspn.cpp": {
       "mode": "100644",
@@ -21807,8 +21732,8 @@
     },
     "util/system/cpu_id.h": {
       "mode": "100644",
-      "sha256": "29ab1686c386128c7e2b47eaa73400fafab09777acbe5da7c658d1bbe8eb1823",
-      "upstream_sha256": "29ab1686c386128c7e2b47eaa73400fafab09777acbe5da7c658d1bbe8eb1823"
+      "sha256": "2893a349526aecd44ed609069c58017646fc710ed2ce16300f4c8a56a7c48625",
+      "upstream_sha256": "2893a349526aecd44ed609069c58017646fc710ed2ce16300f4c8a56a7c48625"
     },
     "util/system/daemon.cpp": {
       "mode": "100644",
@@ -22522,8 +22447,8 @@
     },
     "ya": {
       "mode": "100755",
-      "sha256": "636df52f1b244bbdc8247472300970f64ef1c1950f37990635f9a898e9522b43",
-      "upstream_sha256": "636df52f1b244bbdc8247472300970f64ef1c1950f37990635f9a898e9522b43"
+      "sha256": "e8c7ac1b08b37782f8790c131c5e29154584a56f000ce8a4139bba90398dbe74",
+      "upstream_sha256": "e8c7ac1b08b37782f8790c131c5e29154584a56f000ce8a4139bba90398dbe74"
     },
     "ya.conf": {
       "mode": "100644",
@@ -22654,8 +22579,28 @@
       "mode": "100644",
       "sha256": "ae9a9670fb4ddc9471f78d27fe16d23f905f053df209e4a375f46fc976775b96",
       "upstream_sha256": "ae9a9670fb4ddc9471f78d27fe16d23f905f053df209e4a375f46fc976775b96"
+    },
+    "ydb/udfs/wasm/yexception/main.cpp": {
+      "mode": "100644",
+      "sha256": "7dbf4271cae01692f774a5190e24faccf2297e898e90de470b834fd2482425cf",
+      "upstream_sha256": "7dbf4271cae01692f774a5190e24faccf2297e898e90de470b834fd2482425cf"
+    },
+    "ydb/udfs/wasm/yexception/manifest.json": {
+      "mode": "100644",
+      "sha256": "940cb9b3609c3eeeb2ba764d7dd4f7b2c37170402852490aa39d2ddc04f97106",
+      "upstream_sha256": "940cb9b3609c3eeeb2ba764d7dd4f7b2c37170402852490aa39d2ddc04f97106"
+    },
+    "ydb/udfs/wasm/yexception/query.sql": {
+      "mode": "100644",
+      "sha256": "66b196d97b9c3ec861b960cfead6df9b4786e0032e7031b955ed5b971b639546",
+      "upstream_sha256": "66b196d97b9c3ec861b960cfead6df9b4786e0032e7031b955ed5b971b639546"
+    },
+    "ydb/udfs/wasm/yexception/ya.make": {
+      "mode": "100644",
+      "sha256": "6273a55f9d9f6fb7b0fb84edcb6a4540837ea68db590b9cd767cba2c50b1796d",
+      "upstream_sha256": "6273a55f9d9f6fb7b0fb84edcb6a4540837ea68db590b9cd767cba2c50b1796d"
     }
   },
   "schema_version": 1,
-  "upstream_revision": "a5b480988243eb66a8a8f5a3af3954a8ffc4b383"
+  "upstream_revision": "9191121586f4d8061414d597cdcc2f4ec8d42d20"
 }

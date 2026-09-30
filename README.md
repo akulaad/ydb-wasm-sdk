@@ -40,6 +40,9 @@ For cluster settings, CLI setup, runtime and module uploads, and a SQL smoke
 query, follow the [user guide (in Russian)](docs/getting-started.md). It also covers
 experimental CLI commands, updates, troubleshooting, and using the agent skill.
 
+For a 20–25 minute walkthrough of development, uploads, the module catalog,
+exceptions, and updates, see the [demo plan (in Russian)](docs/demo-plan.md).
+
 Agent instructions for uploading modules, resolving runtime dependencies, and
 waiting for compilation are in
 [`.agent/skills/ydb-udf-cli/SKILL.md`](.agent/skills/ydb-udf-cli/SKILL.md).
@@ -57,8 +60,10 @@ and build the new directory with the same flags. `ya.make` includes the shared
 WASM rules and declares its guest ABI dependency. Preserve `.Release()` when
 returning a bridge value to transfer ownership correctly.
 
-The repository also includes the upstream `text`, `md5`, and `types` modules,
-plus the guest object framework. Only the exported library set is supported;
+The repository also includes the upstream `text`, `md5`, `types`, and `yexception`
+modules, plus the guest object framework. The `yexception` example demonstrates
+an uncaught guest C++ exception; its message decoder is specific to `yexception`
+and requires a compatible server. Only the exported library set is supported;
 arbitrary YDB `PEERDIR`s are not available. Source paths intentionally match YDB
 so existing includes and build files remain usable.
 
